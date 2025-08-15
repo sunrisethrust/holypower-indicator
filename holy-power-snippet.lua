@@ -50,7 +50,7 @@ local function AttachOrUpdatePlayer()
     
     -- Find the correct player button
     F.IterateAllUnitButtons(function(b)
-            if b and b.states and b.states.unit == "player" then
+            if b and b.states and b.states.unit and UnitIsUnit(b.states.unit, "player") then                
                 found = b
             else
                 -- make sure no dots linger on non-player frames
